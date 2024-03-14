@@ -1,0 +1,16 @@
+<button (click)="filterByType('vegetables')">Vegetables</button>
+<button (click)="filterByType('fruits')">Fruits</button>
+<button (click)="filterByType('all')">All</button>
+
+<ul class="store--item-list">
+    <li *ngFor="let item of items" class="store--item-icon">
+      <img
+        [src]="'assets/icons/' + item.id + '.svg'"
+        [alt]="item.name"
+        width="125"
+        height="125"
+      />
+      <p>{{ item.name }} price: {{ item.price | currency: 'USD' }}</p>
+      <button (click) = 'addToCart(item)'>Add to cart</button>
+    </li>
+  </ul>
